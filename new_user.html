@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    <p><a href="/login">Create another user</a></p>
+
+
+
+    % newuser = {'email': email, 'username': user, 'pwd': password}
+
+    <%
+        import json
+        with open('users.json', 'r', encoding='utf-8') as f:
+            userdata = json.load(f)
+    %>
+        %if not any(x['username'] == newuser['username'] for x in userdata['users']):
+        %   userdata['users'].append(newuser)
+            <h3>Thanks for registering {{user}}!</h3>
+        %else:
+            <h3>User already exists!!!</h3>
+        %end
+
+        %with open('users.json', 'w', encoding='utf-8') as f:
+        %   json.dump(userdata, f)
+
+
+</body>
+</html>
