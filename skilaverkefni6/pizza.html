@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Pizza pöntun</title>
+</head>
+<body>
+
+    <h2>Upplýsingar um notenda</h2>
+    <form action="/order" method="get">
+
+    <label>Nafn:</label><input type="text" name="fullname" required>
+    <br>
+
+    <label>Heimilisfang:</label><input type="text" name="heimilisfang">
+        <br>
+
+    <label>Netfang:</label><input type="email" name="netfang" pattern="\w+@\w+\.\w+">
+        <br>
+
+    <label>Símanúmer:</label><input type="text" name="simi" maxlength="7" pattern="\d{7}">
+        <br>
+    <h2>Pizzastærð</h2>
+        <input type="radio" name="pizzasize" value="0"><label>9 tommu - 1000kr</label><br>
+        <input type="radio" name="pizzasize" value="1"><label>12 tommu - 1500kr</label><br>
+        <input type="radio" name="pizzasize" value="2"><label>18 tommu - 2000kr</label><br>
+
+        <br>
+    <h2>Val um álegg</h2>
+        <input type="checkbox" name="Skinka"><label>Skinka</label><br>
+        <input type="checkbox" name="Beikon"><label>Beikon</label><br>
+        <input type="checkbox" name="Pepperoni"><label>Pepperoni</label><br>
+        <br>
+        <input type="submit" value="Order">
+    </form>
+</body>
+</html>
